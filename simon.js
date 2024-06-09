@@ -8,6 +8,7 @@ function playSimon() {
     //Create empty arrays for Simon's pattern and the Player's pattern. Also create a new sound object for the button sounds!
     var pattern = [];
     var playerPattern = [];
+    var canPlay = false;
     var buttonSound = new Audio();
 
     
@@ -36,13 +37,14 @@ function playSimon() {
         $(".button").click(function(event){
         //Create a string from the target buttons class (color)
         clickedButton = "." + event.target.classList[1]
-        //Call buttonFlash and pass in that string
-        buttonFlash(clickedButton);
         //Add that string (color) to the player pattern
         playerPattern.push(clickedButton);
         //Call checkAnswer at the current array index
         checkAnswer(playerPattern.length - 1);
-        
+        //Call buttonFlash and pass in that string
+        if (canPlay){
+            buttonFlash(clickedButton)
+        } 
     })
         
     }
@@ -71,6 +73,7 @@ function playSimon() {
                 $("#level-title").text("Round " + (pattern.length));
 
                 setTimeout(function(){flashSequence(0)}, 1000);
+                canPlay = true;
                 return;
             }
         }
@@ -91,7 +94,7 @@ function playSimon() {
 
         buttonSound.src="./resources/sounds/gameover.wav";
         buttonSound.play();
-
+        
         $("body").addClass("game-over");
         setTimeout(function(){$("body").removeClass("game-over")}, 1200);
 
