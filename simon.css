@@ -1,0 +1,76 @@
+body{
+    background-color:rgb(92, 92, 92);
+}
+
+#main-header{
+    font-family:"Press Start 2P";
+    font-size: 4rem;
+    text-align: center;
+    text-shadow: #FC0 1px 0 10px;  
+}
+
+#level-title{
+    font-family:"Press Start 2P";
+    font-size: 2rem;
+    text-align: center;
+    text-shadow: #FC0 1px 0 10px;
+    margin-top: 10px;
+    margin-bottom: 0px;
+}
+
+.main-container{
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    position: relative;
+    top: 100px;
+    margin: 0;
+}
+
+.button-container{
+    display: grid;
+    grid-template-columns: repeat(2,200px);
+    grid-template-rows: repeat(2,200px);
+    gap: 20px;
+    margin: 0;
+}
+
+.button{
+    height: 200px;
+    width: 200px;
+    border-radius: 15%;
+    border: 8px solid black;
+}
+
+.green{
+    background-color: green;
+}
+
+.red{
+    background-color: red;
+}
+
+.yellow{
+    background-color: yellow;
+}
+
+.blue{
+    background-color: blue;
+}
+
+.flash{
+    background-color: whitesmoke;
+    border-color: rgb(196, 255, 255);
+}
+
+.game-over{
+    background-color: red;
+    opacity: 0.8;
+}
+
+.press-start-2p-regular {
+    font-family: "Press Start 2P", system-ui;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
